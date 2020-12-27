@@ -219,7 +219,9 @@ static NSUInteger kHttpServerPortDefault = 0;
 
 + (NSString *)fetchDocumentRoot {
     // front-end resources
-    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"HttpServerDebug" ofType:@"bundle"];
+//     NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"HttpServerDebug" ofType:@"bundle"];
+//     NSString *documentRoot = [resourcePath stringByAppendingPathComponent:@"web"];
+    NSString *resourcePath = [[NSBundle bundleForClass:self.class] pathForResource:@"HttpServerDebug" ofType:@"bundle"];
     NSString *documentRoot = [resourcePath stringByAppendingPathComponent:@"web"];
 #ifdef DEBUG
     // develop web in simulator, use files in the project bundle directly
